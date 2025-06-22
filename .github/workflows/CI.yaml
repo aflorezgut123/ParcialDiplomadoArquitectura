@@ -1,0 +1,16 @@
+name: CI
+on:
+  pull_request:
+    branches: ['main','develop','release','master']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Descargando repositorio
+      - uses: actions/setup-java@v4
+        name: Instalar java
+        with:
+          distribution: 'temurin'
+          java-version: '17'
