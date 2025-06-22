@@ -15,5 +15,5 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Compilar con maven
+      - name: Compilando con maven
         run: mvn -B verify
