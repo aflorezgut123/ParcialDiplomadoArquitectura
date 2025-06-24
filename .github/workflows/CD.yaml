@@ -1,0 +1,29 @@
+name: CD
+on:
+  pull_request:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Descargando repositorio
+      - uses: actions/setup-java@v4
+        name: Instalar java
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Compilando con maven
+        run: mvn -B verify
+
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: aflorezg/parcial-arquitectura
+          tags: ${{ github.sha }}
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: aflorezg
+          password: ${{ secrets.DOCKER_PASSWORD }}
