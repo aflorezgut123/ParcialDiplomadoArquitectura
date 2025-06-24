@@ -23,4 +23,9 @@ public class PedidoController {
     public String prueba() {
         return "Listando muchos pedidos";
     }
+
+    @GetMapping("/eliminar-pedido")
+    public String eliminarPedido() {
+        return "Pedido eliminado Exitosamente";
+    }
 }
