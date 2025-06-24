@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: aflorezg/parcial-arquitectura
-  tag: 16bde2969a2cfe02bd30337c646fe39923ea07b5
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
