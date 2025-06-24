@@ -1,4 +1,4 @@
-name: continuos deploiment
+name: Continuos Dep
 on:
   pull_request:
     branches: ['main']
