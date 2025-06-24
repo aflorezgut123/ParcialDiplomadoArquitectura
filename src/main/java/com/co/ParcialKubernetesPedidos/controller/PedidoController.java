@@ -19,4 +19,8 @@ public class PedidoController {
     public String generarPedido() {
         return pedidoService.getMensaje();
     }
+    @GetMapping("/listar-pedido")
+    public String prueba() {
+        return "Listando muchos pedidos";
+    }
 }
