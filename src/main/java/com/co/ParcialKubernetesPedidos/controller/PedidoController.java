@@ -28,4 +28,9 @@ public class PedidoController {
     public String pagarPedido() {
         return "pago exitoso!";
     }
+
+    @GetMapping("/eliminar-pedido")
+    public String eliminarPedido() {
+        return "Pedido eliminado!";
+    }
 }
